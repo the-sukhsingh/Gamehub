@@ -2,6 +2,12 @@ import React from 'react'
 import Tic from "@/components/tic"
 import Bingo from "@/components/bingo"
 
+export async function generateStaticParams() {
+  return [
+    { params: { slug: "tic-tac-toe" } },
+    { params: { slug: "bingo" } }
+  ]
+}
 
 const page = ({params}) => {
   console.log(params.slug)
