@@ -7,7 +7,7 @@ const Navbar = () => {
             <span className='font-bold text-xl '>Play Games</span>
         </div>
         <div className='text-white text-2xl font-bold'>
-            <a href="https://github.com/the-sukhsingh/tictactoe" target='_blank' className='flex gap-4'>
+            <a href="https://github.com/the-sukhsingh/Gamehub" target='_blank' className='flex gap-4'>
             Github
             <img  src="icons/github.svg" width={32} alt="" />
             </a>
