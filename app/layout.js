@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Games",
+  title: "GameHub",
   description: "A single Place where you can play interactive games",
 };
 

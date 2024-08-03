@@ -31,7 +31,12 @@ export default function Home() {
       const c = item[2];
       if (form[a] == form[b]) {
         if (form[a] == form[c] && form[a] != null) {
-          setWinner(form[a]);
+          document.getElementById(a).classList.add("lineDone");
+          document.getElementById(b).classList.add("lineDone");
+          document.getElementById(c).classList.add("lineDone");
+          setTimeout(() => {
+            setWinner(form[a]);
+          }, 1500);
           return 0;
         }
       }
@@ -54,8 +59,9 @@ export default function Home() {
         count++;
       }
     });
-    if (count == 9) {
+    if (count == 9) {setTimeout(() => {
       setWinner("No one");
+    }, 1500);
     }
   }
   const handleClick = (e) => {
@@ -78,7 +84,9 @@ export default function Home() {
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
       button.disabled = false;
+      button.classList.remove("lineDone");
     });
+    
   };
   const hoverText = (e) => {
     if (e.target.innerText == "") {
@@ -134,8 +142,8 @@ export default function Home() {
         </div>
         {winner != "" && (
           <>
-            <div className="flex w-full h-[100vh] justify-center items-center bg-[#000000aa] absolute top-0 left-0">
-              <div className="flex w-full md:w-3/5 flex-col gap-5 h-full md:h-4/5 bg-black rounded-sm justify-center items-center text-white text-3xl font-bold">
+            <div className="flex w-full h-[100vh] justify-center items-center bg-[#d1cdcdae] absolute top-0 left-0">
+              <div className="flex w-56 flex-col gap-5 h-40 bg-black rounded-xl justify-center items-center text-center text-white text-3xl font-bold">
                 The winner is {winner}
                 <button
                   className="bg-gray-700 py-2 px-3 rounded-md"

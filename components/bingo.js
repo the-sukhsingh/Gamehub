@@ -101,7 +101,6 @@ const Bingo = () => {
     checkLine(e);
     // disable the shuffle button
     document.getElementById("shuffleBtn").disabled = true;
-    // disable click event
     e.target.style.pointerEvents = "none";
     e.target.classList.add("btnclicked");
   };

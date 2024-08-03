@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+
 .gridy{
     display: grid;
     grid-template-columns: repeat(3,  1fr);
@@ -28,6 +39,23 @@
     background-color: #fff;
     color: #000;
 }
+.lineDone{
+  background-color: #7ef5f7f7;
+  animation: sclaee 1.2s;
+}
+
+@keyframes sclaee {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .theme-switch {
     --toggle-size: 30px;
     /* the size is adjusted using font-size,

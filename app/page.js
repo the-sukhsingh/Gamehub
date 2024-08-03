@@ -1,7 +1,19 @@
-import React from 'react'
+"use client"
+import React,{useEffect, useState} from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
+import Loading from '@/components/loading'
 const page = () => {
+  const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500)
+  }, [])
+  if (loading) {
+    return <Loading />
+  }
   return (
     <>
     <Navbar/>
@@ -15,6 +27,9 @@ const page = () => {
       <li>
     <Link href={"/bingo"}>Bingo</Link>
       </li>
+      {/* <li>
+    <Link href={"/snake"}>Snake</Link>
+      </li> */}
     </ul>
     </div>
     </>

@@ -16,6 +16,30 @@ const Bingo = () => {
     [1, 7, 13, 19, 25],
     [5, 9, 13, 17, 21],
   ];
+  const patterns = [[
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    22, 23, 24, 25,
+  ],[
+    1,6,11,16,21,2,7,12,17,22,3,8,13,18,23,4,9,14,19,24,5,10,15,20,25
+  ],
+[
+  1,2,3,4,5,10,9,8,7,6,11,12,13,14,15,20,19,18,17,16,21,22,23,24,25
+],
+[
+  1,6,11,16,21,22,17,12,7,2,3,8,13,18,23,24,19,14,9,4,5,10,15,20,25
+]]
+const [patt, setPatt] = useState(0)
+const pattern = () => {
+    console.log(patt)
+    const arraye = patterns[patt];
+    if(patt<patterns.length-1){
+      setPatt(patt + 1)
+    }else{
+      setPatt(0)
+    }
+    setArray([...arraye]);
+  };
+
   const simpleArray = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25,
@@ -101,6 +125,7 @@ const Bingo = () => {
     checkLine(e);
     // disable the shuffle button
     document.getElementById("shuffleBtn").disabled = true;
+    document.getElementById("pattern").disabled = true;
     // disable click event
     e.target.style.pointerEvents = "none";
     e.target.classList.add("btnclicked");
@@ -232,18 +257,25 @@ const Bingo = () => {
             );
           })}
         </div>
-        <div className="md:flex md:gap-5">
+        <div className="flex gap-4">
+          <button
+            onClick={pattern}
+            id="pattern"
+            className="w-[100px] md:w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#bc8532] before:to-[rgb(197,211,74)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
+          >
+            Pattern
+          </button>
           <button
             onClick={resetAll}
             id="restart"
-            className="w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#bc8532] before:to-[rgb(197,211,74)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
+            className="w-[100px] md:w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#bc8532] before:to-[rgb(197,211,74)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
           >
             Restart
           </button>
           <button
             onClick={shuffleAgain}
             id="shuffleBtn"
-            className="w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
+            className="w-[100px] md:w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]"
           >
             Shuffle Again
           </button>
