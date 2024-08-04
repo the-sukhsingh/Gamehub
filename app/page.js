@@ -3,7 +3,7 @@ import React,{useEffect, useState} from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Loading from '@/components/loading'
-const page = () => {
+const Page = () => {
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(true)
@@ -36,4 +36,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
