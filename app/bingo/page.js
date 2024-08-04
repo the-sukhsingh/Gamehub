@@ -146,6 +146,8 @@ const pattern = () => {
     }
   };
   const resetAll = () => {
+    let c = confirm("Are you sure you want to reset?");
+    if (c === true) {
     setArray([...simpleArray]);
     setshuffle();
     setClickedd([
@@ -193,6 +195,7 @@ const pattern = () => {
       item.classList.remove("btnclicked");
       item.style.pointerEvents = "all";
     });
+    document.getElementById("pattern").disabled = false;}
   };
   return (
     <>
