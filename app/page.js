@@ -4,14 +4,17 @@ import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Loading from '@/components/loading'
 const Page = () => {
-  const [loading, setLoading] = useState(false)
+  const loading = localStorage.getItem('loading')
+  const [load, setLoad] = useState(loading)
+  console.log(load)
   useEffect(() => {
-    setLoading(true)
     setTimeout(() => {
-      setLoading(false)
+    localStorage.setItem('loading',false)
+    setLoad(true)
     }, 2500)
   }, [])
-  if (loading) {
+
+  if (load === 'false') {
     return <Loading />
   }
   return (

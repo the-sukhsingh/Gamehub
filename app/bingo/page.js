@@ -199,7 +199,8 @@ const pattern = () => {
   };
   return (
     <>
-      <Link href={"/"} className="goback absolute top-5 left-5">
+      <Link href={"/"} className="goback absolute top-5 left-5" onClick={()=>{
+    localStorage.setItem("loading", true)}}>
         &lt;- Back
       </Link>
       <div className="absolute top-5 right-5">

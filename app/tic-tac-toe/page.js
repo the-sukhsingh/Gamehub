@@ -117,7 +117,8 @@ export default function Home() {
   return (
     <>
       <div className="relative w-[100vw] h-[100vh] hee">
-     <Link href={"/"} className="goback absolute top-5 left-5">&lt;- Back</Link>
+     <Link href={"/"} className="goback absolute top-5 left-5" onClick={()=>{
+    localStorage.setItem("loading", true)}}>&lt;- Back</Link>
         <div className="absolute top-5 right-5">
         <label className="theme-switch">
   <input type="checkbox" className="theme-switch__checkbox" onClick={changeTheme}/>
