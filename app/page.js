@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Loading from '@/components/loading'
 const Page = () => {
-  const loading = localStorage.getItem('loading')
+  let loading = localStorage.getItem('loading')
   const [load, setLoad] = useState(loading)
   console.log(load)
   useEffect(() => {
