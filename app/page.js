@@ -3,19 +3,25 @@ import React,{useEffect, useState} from 'react'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Loading from '@/components/loading'
+
 const Page = () => {
-  let loading = localStorage.getItem('loading')
-  if(loading === null){
-    localStorage.setItem('loading',true)
+  let loading = null;
+  if (typeof window !== 'undefined') {
+    loading = localStorage.getItem('loading') || null;
+    if (loading === null) {
+      localStorage.setItem('loading', true);
+    }
   }
-  const [load, setLoad] = useState(loading === 'true' ? 'true' : 'false')
-  console.log(load)
+  const [load, setLoad] = useState(loading === 'true' ? 'true' : 'false');
+  console.log(load);
   useEffect(() => {
-    setTimeout(() => {
-    localStorage.setItem('loading',false)
-    setLoad(true)
-    }, 2500)
-  }, [])
+    if (typeof window !== 'undefined') {
+      setTimeout(() => {
+        localStorage.setItem('loading', false);
+        setLoad(true);
+      }, 2500);
+    }
+  }, []);
 
   if (load === 'false') {
     return <Loading />

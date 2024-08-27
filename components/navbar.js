@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 const Navbar = () => {
   return (
     <nav className="flex md:justify-evenly bg-slate-900 text-white justify-around h-16 items-center">
@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='text-white text-2xl font-bold'>
             <a href="https://github.com/the-sukhsingh/Gamehub" target='_blank' className='flex gap-4'>
             Github
-            <img  src="icons/github.svg" width={32} alt="" />
+            <Image  src="icons/github.svg" width={32} height={32} alt="" />
             </a>
         </div>
         
