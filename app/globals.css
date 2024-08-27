@@ -40,19 +40,22 @@ body{
     color: #000;
 }
 .lineDone{
-  background-color: #7ef5f7f7;
+  background-color: #526a6af7;
   animation: sclaee 1.2s;
 }
 
 @keyframes sclaee {
   0% {
     transform: scale(1);
+    transform: rotate(180deg);
   }
   50% {
     transform: scale(1.2);
+    transform: rotate(0deg);
   }
   100% {
     transform: scale(1);
+    transform: rotate(180deg);
   }
 }
 
