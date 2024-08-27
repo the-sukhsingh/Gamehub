@@ -5,7 +5,10 @@ import Navbar from '@/components/navbar'
 import Loading from '@/components/loading'
 const Page = () => {
   let loading = localStorage.getItem('loading')
-  const [load, setLoad] = useState(loading)
+  if(loading === null){
+    localStorage.setItem('loading',true)
+  }
+  const [load, setLoad] = useState(loading === 'true' ? 'true' : 'false')
   console.log(load)
   useEffect(() => {
     setTimeout(() => {
